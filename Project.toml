@@ -1,7 +1,18 @@
 name = "LatentSDE"
 uuid = "3d85c098-5292-4202-9101-df4bfba76382"
 authors = ["Linus Heck"]
-version = "1.0.0-DEV"
+version = "1.0.0"
+
+[deps]
+ChainRulesCore = "d360d2e6-b24c-11e9-a2a3-2a2ae2dbcce4"
+ComponentArrays = "b0b7db55-cfe3-40fc-9ded-d10e2dbeff66"
+DifferentialEquations = "0c46a032-eb83-5123-abaf-570d42b7fbaa"
+Distributions = "31c24e10-a181-5473-b8eb-7969acd0382f"
+Functors = "d9f16b24-f501-4c13-a1f2-28368ffc5196"
+InformationGeometry = "ee9d1287-bbdf-432c-9920-c447cf97a828"
+Lux = "b2108857-7c20-44ae-9111-449ecde12c47"
+LuxCore = "bb33d45b-7691-41d6-9220-0943567d0623"
+RecipesBase = "3cdcf5f2-1ef4-517c-9805-6587b60abb01"
 
 [compat]
 julia = "1"
