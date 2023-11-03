@@ -1,15 +1,14 @@
+using Test
 using Lux
 using DifferentialEquations
 using Functors
-using Plots
 using ComponentArrays
 using Zygote
 using Random
 using FiniteDiff
 using SciMLSensitivity
-using DiffEqNoiseProcess
 using Random123
-using JLD2
+using LatentSDE
 
 @testset "Latent SDE" begin
     solver = EulerHeun()
@@ -29,9 +28,6 @@ using JLD2
 
     posterior_latent, posterior_data, logterm_, kl_divergence_, distance_ = latent_sde(Timeseries([input1, input2, input2, input2]), ps, st, seed=seed)
     
-    # p = plot(posterior_latent)
-    # savefig(p, "posterior_latent.pdf")
-    # 
     sense = BacksolveAdjoint(autojacvec=ZygoteVJP(), checkpointing=false)
     noise = function(seed, noise_size)
         rng_tree = Xoshiro(seed)
